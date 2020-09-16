@@ -83,6 +83,11 @@ func _trouver_supposition():
 					nouvelle_supposition_valide = true;
 		tab_response.append(nouvelle_supposition);
 		return nouvelle_supposition;
+		
+func _ecrire_console(texte_a_ecrire,effacer_texte):
+	if effacer_texte == true:
+		consoleJeu.text = "";
+	consoleJeu.text += texte_a_ecrire + "\n";
 
 func _on_BoutonPlusGrand_pressed():
 	_essai(true);
@@ -90,17 +95,11 @@ func _on_BoutonPlusGrand_pressed():
 
 func _on_BoutonPlusPetit_pressed():
 	_essai(false);
-	
-func _ecrire_console(texte_a_ecrire,effacer_texte):
-	if effacer_texte == true:
-		consoleJeu.text = "";
-	consoleJeu.text += texte_a_ecrire + "\n";
 
 func _on_BoutonTrouver_pressed():
 	_ecrire_console("J'ai trouvé votre nombre !",true);
 	_ecrire_console("Presser ESPACE pour rejouer !",false);
 	fin = true;
-
 
 func _on_QuitterJeu_pressed():
 	get_tree().quit();
