@@ -4,3 +4,53 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+
+[node name="BoutonPlusGrand" type="Button" parent="."]
+margin_left = 116.043
+margin_top = 357.047
+margin_right = 352.043
+margin_bottom = 422.047
+text = "Plus grand"
+
+[node name="BoutonPlusPetit" type="Button" parent="."]
+margin_left = 662.71
+margin_top = 357.047
+margin_right = 898.71
+margin_bottom = 422.047
+text = "Plus petit"
+
+[node name="BoutonTrouver" type="Button" parent="."]
+margin_left = 384.853
+margin_top = 358.339
+margin_right = 620.853
+margin_bottom = 423.339
+text = "Vous avez trouvé mon nombre !"
+
+[node name="QuitterJeu" type="Button" parent="."]
+margin_left = 115.0
+margin_top = 469.0
+margin_right = 895.0
+margin_bottom = 534.0
+text = "Quitter le jeu"
+
+[node name="TitreJeu" type="Label" parent="."]
+margin_left = 44.8771
+margin_top = 34.1229
+margin_right = 237.877
+margin_bottom = 49.1229
+rect_scale = Vector2( 5, 5 )
+text = "Jeu de devinettes de nombre"
+
+[node name="ConsoleJeu" type="TextEdit" parent="."]
+margin_left = 41.2924
+margin_top = 142.123
+margin_right = 973.292
+margin_bottom = 318.123
+readonly = true
+[connection signal="pressed" from="BoutonPlusGrand" to="." method="_on_BoutonPlusGrand_pressed"]
+[connection signal="pressed" from="BoutonPlusPetit" to="." method="_on_BoutonPlusPetit_pressed"]
+[connection signal="pressed" from="BoutonTrouver" to="." method="_on_BoutonPlusPetit_pressed"]
+[connection signal="pressed" from="BoutonTrouver" to="." method="_on_BoutonTrouver_pressed"]
+[connection signal="pressed" from="QuitterJeu" to="." method="_on_BoutonPlusPetit_pressed"]
+[connection signal="pressed" from="QuitterJeu" to="." method="_on_BoutonTrouver_pressed"]
+[connection signal="pressed" from="QuitterJeu" to="." method="_on_QuitterJeu_pressed"]

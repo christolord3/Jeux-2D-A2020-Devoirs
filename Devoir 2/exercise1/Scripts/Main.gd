@@ -8,23 +8,26 @@ var response_recu = false;
 var tab_response = [];
 var rejouer = false;
 
+onready var consoleJeu = $ConsoleJeu; 
+
 # Initialise le jeu Devin des nombres
 func _ready():
 	var message_intro = ["-------------------------","Bonjour, je suis le devin des nombres!","-------------------------"];
 	var explication_jeu = "Je vais deviner le nombre auquel tu penses entre " + str(valeur_minimale) + " et " + str(valeur_maximale) + " !";
 	
 	for valeur_tableau in message_intro:
-		print(valeur_tableau);	
-	print(explication_jeu);
-	print("Est-ce votre nombre est : " + str(supposition));
-	print("Cliquer sur la flèche haut si le chiffre est plus grand que ma supposition ou la flèche bas s'il est plus petit !");
+		_ecrire_console(valeur_tableau,false);	
+	_ecrire_console(explication_jeu,false);
+	_ecrire_console("Cliquer sur bouton 'Plus haut'/Flèche Haut si votre nombre est plus grand que ma supposition\n ou le bouton 'Plus bas'/Flèche bas s'il est plus petit !",false);
+	_ecrire_console("Cliquer sur ESPACE ou le bouton à cet effet si le jeu à trouver votre nombre !",false);
+	_ecrire_console("Est-ce votre nombre est " + str(supposition) + " ?",false);
 
 # Questionne le joueur à propos de son nombre
 func _process(delta):
 	if fin == false:
 		if response_recu == true:
-			print("Est-ce votre nombre est : " + str(supposition));
-			print("Cliquer sur la flèche haut si le chiffre est plus grand que ma supposition ou la flèche bas s'il est plus petit !");
+			_ecrire_console("Est-ce votre nombre est " + str(supposition) + " ?",true);
+			_ecrire_console("Cliquer sur bouton 'Plus haut'/Flèche Haut si votre nombre est plus grand que ma supposition\n ou le bouton 'Plus bas'/Flèche bas s'il est plus petit !",false);
 			response_recu = false;
 		else:
 			if Input.is_action_just_pressed("NombrePlusGrand"):
@@ -32,8 +35,8 @@ func _process(delta):
 			if Input.is_action_just_pressed("NombrePlusPetit"):
 				_essai(false);
 			if Input.is_action_just_pressed("MachineSucces"):
-				print("J'ai trouvé votre nombre !");
-				print("Presser ESPACE pour rejouer !");
+				_ecrire_console("J'ai trouvé votre nombre !",true);
+				_ecrire_console("Presser ESPACE pour rejouer !",false);
 				fin = true;
 	else:
 		if rejouer == true:
@@ -49,16 +52,16 @@ func _essai(est_plus_grand):
 		if valeur_minimale != valeur_maximale - 1:
 			supposition = _trouver_supposition();
 		else:
-			print("Vous avez tricher !");
-			print("Presser ESPACE pour rejouer !");
+			_ecrire_console("Vous avez tricher !",true);
+			_ecrire_console("Presser ESPACE pour rejouer !",false);
 			fin = true;
 	else:
 		valeur_maximale = supposition;
 		if valeur_minimale != valeur_maximale - 1:
 			supposition = _trouver_supposition();
 		else:
-			print("Vous avez tricher !");
-			print("Presser ESPACE pour rejouer !");
+			_ecrire_console("Vous avez tricher !",true);
+			_ecrire_console("Presser ESPACE pour rejouer !",false);
 			fin = true;
 
 func _trouver_supposition():
@@ -80,3 +83,24 @@ func _trouver_supposition():
 					nouvelle_supposition_valide = true;
 		tab_response.append(nouvelle_supposition);
 		return nouvelle_supposition;
+
+func _on_BoutonPlusGrand_pressed():
+	_essai(true);
+
+
+func _on_BoutonPlusPetit_pressed():
+	_essai(false);
+	
+func _ecrire_console(texte_a_ecrire,effacer_texte):
+	if effacer_texte == true:
+		consoleJeu.text = "";
+	consoleJeu.text += texte_a_ecrire + "\n";
+
+func _on_BoutonTrouver_pressed():
+	_ecrire_console("J'ai trouvé votre nombre !",true);
+	_ecrire_console("Presser ESPACE pour rejouer !",false);
+	fin = true;
+
+
+func _on_QuitterJeu_pressed():
+	get_tree().quit();
