@@ -46,7 +46,7 @@ func _essai(est_plus_grand):
 	response_recu = true;
 	if est_plus_grand == true:
 		valeur_minimale = supposition;
-		if valeur_minimale != valeur_maximale:
+		if valeur_minimale != valeur_maximale - 1:
 			supposition = _trouver_supposition();
 		else:
 			print("Vous avez tricher !");
@@ -54,7 +54,7 @@ func _essai(est_plus_grand):
 			fin = true;
 	else:
 		valeur_maximale = supposition;
-		if valeur_minimale != valeur_maximale:
+		if valeur_minimale != valeur_maximale - 1:
 			supposition = _trouver_supposition();
 		else:
 			print("Vous avez tricher !");
