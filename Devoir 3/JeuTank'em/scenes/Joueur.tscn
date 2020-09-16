@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ressources/joueur/PNG/Hulls_Color_A/Hull_01.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Joueur" type="KinematicBody2D"]
+
+[node name="Mouvements_joueur" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "arriere"
