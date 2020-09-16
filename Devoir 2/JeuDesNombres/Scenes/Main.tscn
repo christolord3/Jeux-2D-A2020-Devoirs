@@ -49,8 +49,8 @@ margin_bottom = 318.123
 readonly = true
 [connection signal="pressed" from="BoutonPlusGrand" to="." method="_on_BoutonPlusGrand_pressed"]
 [connection signal="pressed" from="BoutonPlusPetit" to="." method="_on_BoutonPlusPetit_pressed"]
-[connection signal="pressed" from="BoutonTrouver" to="." method="_on_BoutonPlusPetit_pressed"]
 [connection signal="pressed" from="BoutonTrouver" to="." method="_on_BoutonTrouver_pressed"]
-[connection signal="pressed" from="QuitterJeu" to="." method="_on_BoutonPlusPetit_pressed"]
+[connection signal="pressed" from="BoutonTrouver" to="." method="_on_BoutonPlusPetit_pressed"]
 [connection signal="pressed" from="QuitterJeu" to="." method="_on_BoutonTrouver_pressed"]
+[connection signal="pressed" from="QuitterJeu" to="." method="_on_BoutonPlusPetit_pressed"]
 [connection signal="pressed" from="QuitterJeu" to="." method="_on_QuitterJeu_pressed"]
