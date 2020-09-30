@@ -29,16 +29,10 @@ func _process(delta):
 func start(pos,dir):
 	rotation = dir;
 	position = pos;
-	velocity = Vector2(0,speed).rotated(rotation);
+	velocity = Vector2(0,-speed).rotated(rotation);
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
-	if collision:
-		if collision.collider.name == "Joueur":
-			velocity = velocity.bounce(collision.normal);
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free();
 	
 func _on_timer_timeout_avant_explosion():
 	timer_apres_explosion.start();
