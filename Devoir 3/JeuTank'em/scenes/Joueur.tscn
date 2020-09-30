@@ -1,14 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Joueur.gd" type="Script" id=1]
 [ext_resource path="res://ressources/joueur/Hull_01.png" type="Texture" id=2]
 [ext_resource path="res://ressources/joueur/Gun_01.png" type="Texture" id=3]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.00733819, 0.00162781 )
+
 [node name="Joueur" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -565.019 ]
+}
+
+[node name="BoutCanon" type="Position2D" parent="."]
+position = Vector2( 0, -106.073 )
 
 [node name="Armure" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Canon" type="Sprite" parent="."]
 texture = ExtResource( 3 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+scale = Vector2( 12105.6, 78769.5 )
+shape = SubResource( 1 )

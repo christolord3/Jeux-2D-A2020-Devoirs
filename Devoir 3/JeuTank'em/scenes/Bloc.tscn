@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.77232, 0.215459 )
+
+[node name="Bloc" type="StaticBody2D"]
+
+[node name="Polygone" type="Polygon2D" parent="."]
+scale = Vector2( 1.07701, 0.412449 )
+polygon = PoolVector2Array( 0, 0, 7, 0, 7, 1, 3, 1, 0, 1, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.77642, 0.208672 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
