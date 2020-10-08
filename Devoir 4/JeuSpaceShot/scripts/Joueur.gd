@@ -27,7 +27,7 @@ func mouvements():
 	if avancer:
 		#Si la distance entre la souris et le joueur est plus grand 30 pixels
 		#On bouge selon la vitesse prévue
-		if dir.length() > 5:
+		if dir.length() > 30:
 			vitesse = 200;
 			velocite = Vector2(vitesse, 0).rotated(rotation)
 	else:
@@ -43,6 +43,7 @@ func mouvements():
 func teleporter():
 	if position.x <= 10:
 		position.x = 1013;
+		position.rotated(rotation)
 	elif position.x >= 1013:
 		position.x = 10;
 	elif position.y <= 10:
