@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Joueur.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ressources/logo/logo-spaceshot.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Jeu.gd" type="Script" id=3]
+[ext_resource path="res://ressources/menu/bouton-quitter.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 173.725, 29.9392 )
+
+[node name="Jeu" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 103.688, 15.17 )
+scale = Vector2( 0.267122, 0.267122 )
+texture = ExtResource( 2 )
+
+[node name="Joueur" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 300 )
+
+[node name="CompteurPoint" type="RichTextLabel" parent="."]
+margin_left = 63.3292
+margin_top = 27.8094
+margin_right = 124.329
+margin_bottom = 43.8094
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetourMenu" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512, 300 )
+texture = ExtResource( 4 )
+
+[node name="Area2DRetourMenu" type="Area2D" parent="RetourMenu"]
+
+[node name="CollissionShapeRetourMenu" type="CollisionShape2D" parent="RetourMenu/Area2DRetourMenu"]
+shape = SubResource( 1 )
+
+[node name="TexteFinJeu" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 251.811
+margin_top = 167.413
+margin_right = 358.811
+margin_bottom = 182.413
+rect_scale = Vector2( 5, 5 )
+text = "Vous êtes mort !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="input_event" from="RetourMenu/Area2DRetourMenu" to="." method="_on_area2DRetourMenu_input_event"]

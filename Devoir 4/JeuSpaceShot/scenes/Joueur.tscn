@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ressources/joueur/SpaceShipSmall.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Joueur.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 44.2032
+
+[node name="Joueur" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="ImageJoueur" type="Sprite" parent="."]
+position = Vector2( 0.080332, 0.163055 )
+rotation = 1.5708
+scale = Vector2( 0.725706, 0.725706 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.25508, -0.504768 )
+
+[node name="CollisionShapeJoueur" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.766174, 0.600001 )
+shape = SubResource( 1 )

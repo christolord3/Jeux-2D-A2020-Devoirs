@@ -6,10 +6,10 @@ var timer_logo;
 var timer_bouton_start;
 var timer_bouton_options;
 var timer_bouton_quitter;
-onready var logo = $logo;
-onready var boutonStart = $boutonStart;
-onready var boutonOptions = $boutonOptions;
-onready var boutonQuitter = $boutonQuitter;
+onready var logo = $Logo;
+onready var boutonStart = $BoutonStart;
+onready var boutonOptions = $BoutonOptions;
+onready var boutonQuitter = $BoutonQuitter;
 
 # Fonction _ready
 # On passe sans rien faire !
@@ -46,7 +46,7 @@ func _ready():
 # Si l'événement est un clic, on change de scène
 func _on_aread2DStart_input_event(viewport, event, shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		get_tree().change_scene("res://scenes/Game.tscn");
+		get_tree().change_scene("res://scenes/Jeu.tscn");
 
 # Fonction _on_aread2DOptions_input_event
 # Survient quand un événement est généré par aread2DOptions
