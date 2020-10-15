@@ -46,7 +46,6 @@ func mouvements():
 func teleporter():
 	if position.x <= 10:
 		position.x = 1013;
-		position.rotated(rotation)
 	elif position.x >= 1013:
 		position.x = 10;
 	elif position.y <= 10:
