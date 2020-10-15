@@ -9,4 +9,8 @@ func _ready():
 	velocite = Vector2(vitesse,0).rotated(rotation);
 
 func _process(delta):
-	move_and_collide(velocite);
+	var collision = move_and_collide(velocite);
+	if collision:
+		if collision.collider.has_method("exploser"):
+			collision.collider.exploser();
+			get_parent().remove_child(self);

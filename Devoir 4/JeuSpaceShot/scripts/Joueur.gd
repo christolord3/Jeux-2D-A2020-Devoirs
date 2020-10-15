@@ -1,8 +1,7 @@
 extends KinematicBody2D
 
-var vie = 3;
-export var en_vie = true;
-var vitesse = 200
+export var vie = 3;
+var vitesse = 250
 var velocite = Vector2()
 const laser = preload("res://scenes/Laser.tscn");
 onready var position2DCanon = $Position2DCanon;
@@ -16,9 +15,7 @@ func _physics_process(delta):
 	teleporter()
 
 func _process(delta):
-	#Si le joueur est mort, alors on change son statut
-	if vie == 0:
-		en_vie = false;
+	pass
 		
 func mouvements():
 	#On vérifie si le joueur bouge
@@ -30,8 +27,8 @@ func mouvements():
 	if avancer:
 		#Si la distance entre la souris et le joueur est plus grand 30 pixels
 		#On bouge selon la vitesse prévue
-		if dir.length() > 30:
-			vitesse = 200;
+		if dir.length() > 40:
+			vitesse = 250;
 			velocite = Vector2(vitesse, 0).rotated(rotation)
 	else:
 		vitesse = vitesse - 5;
@@ -58,4 +55,7 @@ func tirer():
 		var nouveauLaser = laser.instance();
 		nouveauLaser.global_position = position2DCanon.global_position;
 		nouveauLaser.global_rotation = global_rotation;
-		get_parent().add_child(nouveauLaser)
+		get_parent().add_child(nouveauLaser);
+		
+func enlever_vie():
+	vie -= 1;

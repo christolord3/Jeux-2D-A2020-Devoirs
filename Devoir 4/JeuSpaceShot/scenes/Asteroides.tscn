@@ -337,6 +337,8 @@ radius = 45.0649
 [node name="Asteroides" type="KinematicBody2D"]
 scale = Vector2( 0.84, 0.84 )
 z_index = -1
+collision_layer = 2
+collision_mask = 2147483651
 script = ExtResource( 2 )
 
 [node name="AnimatedSpriteAsteroides" type="AnimatedSprite" parent="."]

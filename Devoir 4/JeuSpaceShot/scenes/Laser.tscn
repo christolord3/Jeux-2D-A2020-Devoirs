@@ -16,13 +16,17 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=2]
 
 [node name="Laser" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="animationLaser" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 1.22499 )
 rotation = 1.5708
 frames = SubResource( 1 )
-playing = true
+frame = 1
 
 [node name="CollisionShape2DLaser" type="CollisionShape2D" parent="."]
-scale = Vector2( -0.036036, -0.04 )
+rotation = 1.56961
+scale = Vector2( -0.100127, 0.170068 )
 shape = SubResource( 2 )

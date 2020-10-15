@@ -5,6 +5,9 @@ onready var compteurPoint = $CompteurPoint;
 onready var boutonFinJeu =  $RetourMenu;
 onready var texteFinJeu = $TexteFinJeu;
 onready var joueur = $Joueur;
+onready var coeur1 = $Coeur1;
+onready var coeur2 = $Coeur2;
+onready var coeur3 = $Coeur3;
 const asteroides = preload("res://scenes/Asteroides.tscn");
 var points = 0;
 var en_jeu = true;
@@ -21,17 +24,30 @@ func _process(delta):
 	if en_jeu:
 		verifierEnJeu();
 		afficherPoints();
+		afficherVies();
 	else:
 		afficherMenuSortie();
 
 func verifierEnJeu():
-	en_jeu = joueur.en_vie;
+	if joueur.vie <= 0:
+		en_jeu = false;
 
 func changerPoints(nouveauPoints):
 	points += nouveauPoints;
+	
+func augmenterPoints(nouveau_point):
+	points += nouveau_point;
 
 func afficherPoints():
 	compteurPoint.text = str(points) + " points";
+	
+func afficherVies():
+	if joueur.vie == 2:
+		coeur3.visible = false;
+	elif joueur.vie == 1:
+		coeur2.visible = false;
+	elif joueur.vie == 0:
+		coeur1.visible = false;
 	
 func afficherMenuSortie():
 	texteFinJeu.visible = true;
