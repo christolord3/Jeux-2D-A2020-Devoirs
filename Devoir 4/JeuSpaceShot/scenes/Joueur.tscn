@@ -20,3 +20,7 @@ offset = Vector2( 1.25508, -0.504768 )
 rotation = 1.5708
 scale = Vector2( 0.766174, 0.600001 )
 shape = SubResource( 1 )
+
+[node name="Position2DCanon" type="Position2D" parent="."]
+position = Vector2( 25.5165, 0.176777 )
+[connection signal="input_event" from="." to="." method="_on_Joueur_input_event"]

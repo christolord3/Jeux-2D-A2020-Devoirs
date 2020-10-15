@@ -4,12 +4,15 @@ var vie = 3;
 export var en_vie = true;
 var vitesse = 200
 var velocite = Vector2()
+const laser = preload("res://scenes/Laser.tscn");
+onready var position2DCanon = $Position2DCanon;
 
 func _ready():
 	pass
 
 func _physics_process(delta):
 	mouvements()
+	tirer()
 	teleporter()
 
 func _process(delta):
@@ -50,3 +53,10 @@ func teleporter():
 		position.y = 590;
 	elif position.y >= 590:
 		position.y = 10;
+
+func tirer():
+	if Input.is_action_just_pressed("ui_tirer"):
+		var nouveauLaser = laser.instance();
+		nouveauLaser.global_position = position2DCanon.global_position;
+		nouveauLaser.global_rotation = global_rotation;
+		get_parent().add_child(nouveauLaser)
