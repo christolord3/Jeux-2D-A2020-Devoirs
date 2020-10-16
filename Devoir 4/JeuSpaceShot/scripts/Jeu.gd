@@ -30,11 +30,12 @@ func _process(delta):
 
 func verifierEnJeu():
 	if joueur.vie <= 0:
+		remove_child(joueur)
 		en_jeu = false;
 
 func changerPoints(nouveauPoints):
 	points += nouveauPoints;
-	
+
 func augmenterPoints(nouveau_point):
 	points += nouveau_point;
 
@@ -48,7 +49,7 @@ func afficherVies():
 		coeur2.visible = false;
 	elif joueur.vie == 0:
 		coeur1.visible = false;
-	
+
 func afficherMenuSortie():
 	texteFinJeu.visible = true;
 	boutonFinJeu.visible = true;
@@ -58,12 +59,10 @@ func _on_area2DRetourMenu_input_event(viewport, event, shape_idx):
 		get_tree().change_scene("res://scenes/Main.tscn");
 
 func _on_timer_timeout_asteroides():
-	if(secondes == 2):
-		
+	if(secondes == 1):
 		secondes = 0;
 		var nouveauAsteroides = asteroides.instance();
 		var positionEcran = round(rand_range(0,5));
-		
 		if(positionEcran == 1):
 			nouveauAsteroides.global_position.x = 0;
 			nouveauAsteroides.global_position.y = round(rand_range(0,600));

@@ -25,8 +25,10 @@ func mouvements(delta):
 	var collision = move_and_collide(velocite);
 	if collision:
 		if collision.collider.has_method("enlever_vie"):
-			exploser();
-			collision.collider.enlever_vie();
+			if !collision.collider.obtenir_statut_protection():
+				collision.collider.enlever_vie();
+				collision.collider.changer_statut_protege();
+				get_parent().remove_child(self);
 		velocite = velocite.bounce(collision.normal);
 
 func teleporter():
@@ -38,7 +40,7 @@ func teleporter():
 		position.y = 600;
 	elif position.y >= 600:
 		position.y = 0;
-		
+
 func exploser():
 	if est_complet == true:
 		var nouveauAsteroides_1 = asteroides.instance();
@@ -46,8 +48,8 @@ func exploser():
 		nouveauAsteroides_1.est_complet = false;
 		nouveauAsteroides_2.est_complet = false;
 		nouveauAsteroides_1.global_position = global_position;
-		nouveauAsteroides_2.global_position.x = global_position.x + round(rand_range(0,5));
-		nouveauAsteroides_2.global_position.y = global_position.y + round(rand_range(0,5));
+		nouveauAsteroides_2.global_position.x = global_position.x + round(rand_range(1,5));
+		nouveauAsteroides_2.global_position.y = global_position.y + round(rand_range(1,5));
 		nouveauAsteroides_1.velocite = velocite;
 		nouveauAsteroides_2.velocite = -velocite;
 		nouveauAsteroides_1.scale = Vector2(.5,.5);

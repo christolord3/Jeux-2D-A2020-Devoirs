@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+#Variables
 onready var animationLaser = $animationLaser;
 var velocite;
 var vitesse = 10;

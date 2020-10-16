@@ -1,27 +1,39 @@
 extends KinematicBody2D
 
 export var vie = 3;
-var vitesse = 250
-var velocite = Vector2()
+var est_protege = false;
+var vitesse = 250;
+var velocite = Vector2();
+var timer = null;
+var secondes = 0;
+var temps_protection = 0;
 const laser = preload("res://scenes/Laser.tscn");
 onready var position2DCanon = $Position2DCanon;
 
 func _ready():
-	pass
+	timer = Timer.new();
+	timer.connect("timeout", self, "_on_timer_timeout_joueur");
+	add_child(timer);
 
 func _physics_process(delta):
-	mouvements()
-	tirer()
-	teleporter()
+	mouvements();
+	tirer();
+	teleporter();
 
 func _process(delta):
-	pass
-		
+	if temps_protection >= 3:
+		timer.stop();
+		modulate.a = 1;
+		est_protege = false;
+		temps_protection = 0;
+	if est_protege:
+		modulate.a = 0.5;
+
 func mouvements():
 	#On vérifie si le joueur bouge
-	var avancer = Input.is_action_pressed("ui_up")
+	var avancer = Input.is_action_pressed("ui_up");
 	#On calcule la direction entre le joueur et la souris
-	var dir = get_global_mouse_position() - global_position
+	var dir = get_global_mouse_position() - global_position;
 	
 	#Si on avance
 	if avancer:
@@ -29,16 +41,16 @@ func mouvements():
 		#On bouge selon la vitesse prévue
 		if dir.length() > 40:
 			vitesse = 250;
-			velocite = Vector2(vitesse, 0).rotated(rotation)
+			velocite = Vector2(vitesse, 0).rotated(rotation);
 	else:
 		vitesse = vitesse - 5;
 		if vitesse <= 0:
 			vitesse = 0;
-		velocite = Vector2(vitesse, 0).rotated(rotation)
-	velocite = move_and_slide(velocite)
+		velocite = Vector2(vitesse, 0).rotated(rotation);
+	velocite = move_and_slide(velocite);
 	#On change la direction du vaisseau selon la souris
 	if dir.length() > 5:
-		rotation = dir.angle()
+		rotation = dir.angle();
 
 func teleporter():
 	if position.x <= 10:
@@ -56,6 +68,17 @@ func tirer():
 		nouveauLaser.global_position = position2DCanon.global_position;
 		nouveauLaser.global_rotation = global_rotation;
 		get_parent().add_child(nouveauLaser);
-		
+
 func enlever_vie():
-	vie -= 1;
+	if est_protege == false:
+		vie -= 1;
+
+func _on_timer_timeout_joueur():
+	temps_protection += 1;
+
+func changer_statut_protege():
+	timer.start();
+	est_protege = true;
+
+func obtenir_statut_protection():
+	return est_protege;

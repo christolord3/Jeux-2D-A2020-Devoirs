@@ -60,17 +60,16 @@ func _on_aread2DOptions_input_event(viewport, event, shape_idx):
 # Si l'événement est un clic, on ferme le programme
 func _on_area2DQuitter_input_event(viewport, event, shape_idx):
 	if  event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-		print("Quitting game !");
 		get_tree().quit();
 		
 func _on_timer_timeout_logo():
 	logo.visible = true;
-	
+
 func _on_timer_timeout_bouton_start():
 	boutonStart.visible = true;
-	
+
 func _on_timer_timeout_bouton_options():
 	boutonOptions.visible = true;
-	
+
 func _on_timer_timeout_bouton_quitter():
 	boutonQuitter.visible = true;

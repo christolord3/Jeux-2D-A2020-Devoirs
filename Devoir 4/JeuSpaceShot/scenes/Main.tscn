@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ressources/logo/logo-spaceshot.png" type="Texture" id=1]
 [ext_resource path="res://ressources/menu/bouton-start.png" type="Texture" id=2]
 [ext_resource path="res://ressources/menu/bouton-quitter.png" type="Texture" id=3]
 [ext_resource path="res://ressources/menu/bouton-options.png" type="Texture" id=4]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=5]
+[ext_resource path="res://ressources/fond_ecran/fond_jeu.jpg" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 175, 30 )
@@ -55,6 +56,12 @@ gravity_vec = Vector2( 0, 0 )
 [node name="CollisionShapeQuitter" type="CollisionShape2D" parent="BoutonQuitter/Area2DQuitter"]
 position = Vector2( -8, 334 )
 shape = SubResource( 1 )
+
+[node name="FondJeu" type="Sprite" parent="."]
+position = Vector2( 509.707, 299.89 )
+scale = Vector2( 0.530945, 0.559055 )
+z_index = -2
+texture = ExtResource( 6 )
 [connection signal="input_event" from="BoutonStart/Aread2DStart" to="." method="_on_aread2DStart_input_event"]
 [connection signal="input_event" from="BoutonOptions/Aread2DOptions" to="." method="_on_aread2DOptions_input_event"]
 [connection signal="input_event" from="BoutonQuitter/Area2DQuitter" to="." method="_on_area2DQuitter_input_event"]
