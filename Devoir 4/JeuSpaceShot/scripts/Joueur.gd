@@ -9,6 +9,7 @@ var secondes = 0;
 var temps_protection = 0;
 const laser = preload("res://scenes/Laser.tscn");
 onready var position2DCanon = $Position2DCanon;
+onready var collisionShapeJoueur = $CollisionShapeJoueur;
 
 func _ready():
 	timer = Timer.new();
@@ -26,6 +27,7 @@ func _process(delta):
 		modulate.a = 1;
 		est_protege = false;
 		temps_protection = 0;
+		collisionShapeJoueur.disabled = false;
 	if est_protege:
 		modulate.a = 0.5;
 
@@ -78,6 +80,7 @@ func _on_timer_timeout_joueur():
 
 func changer_statut_protege():
 	timer.start();
+	collisionShapeJoueur.disabled = true;
 	est_protege = true;
 
 func obtenir_statut_protection():

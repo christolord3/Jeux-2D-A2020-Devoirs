@@ -13,6 +13,7 @@ var points = 0;
 var en_jeu = true;
 var timer = null;
 var secondes = 0;
+var puissance = 0;
 
 func _ready():
 	timer = Timer.new();
@@ -59,7 +60,8 @@ func _on_area2DRetourMenu_input_event(viewport, event, shape_idx):
 		get_tree().change_scene("res://scenes/Main.tscn");
 
 func _on_timer_timeout_asteroides():
-	if(secondes == 1):
+	puissance += 0.01;
+	if(secondes == 0.5):
 		secondes = 0;
 		var nouveauAsteroides = asteroides.instance();
 		var positionEcran = round(rand_range(0,5));
@@ -80,4 +82,4 @@ func _on_timer_timeout_asteroides():
 			nouveauAsteroides.global_position.y = 600;
 			add_child(nouveauAsteroides);
 	else:
-		secondes += 1;
+		secondes += 0.25;
