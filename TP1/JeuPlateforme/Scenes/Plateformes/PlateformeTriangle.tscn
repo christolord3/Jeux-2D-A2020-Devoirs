@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Plateformes/Plateforme.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PlateformeTriangle.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.679169, -0.420723, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.679169, -0.420723, 0, 0, 0, 0, -0.359665, -1.74328, 0, 0, 0, 0, 62.1487, -63.1921, 0, 0, 0, 0, 126.776, -0.683815, 0, 0, 0, 0, -0.679169, -0.420723 )
+}
+
+[node name="PlateformeTriangle" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PlateformeTrianglePath2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PlateformeTriangleFollow2D" type="PathFollow2D" parent="PlateformeTrianglePath2D"]
+position = Vector2( -0.679169, -0.420723 )
+rotation = -1.5708
+rotate = false
+
+[node name="Plateforme" parent="PlateformeTrianglePath2D/PlateformeTriangleFollow2D" instance=ExtResource( 1 )]
+rotation = 1.57088

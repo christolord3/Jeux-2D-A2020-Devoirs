@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.2659, 12.4487 )
+
+[node name="Plateforme" type="StaticBody2D"]
+
+[node name="PolygonPlateforme" type="Polygon2D" parent="."]
+position = Vector2( -31, -12 )
+scale = Vector2( -1514.47, 19.9732 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -0.0423906, -0.0202634, -0.0434491, 0.60012, -0.0423321, 1.22272, 0.000282789, 1.22267, 0.00142746, 0.608644, 0.000288889, -0.0215849 )
+
+[node name="CollisionPlateforme" type="CollisionShape2D" parent="."]
+position = Vector2( 0.812714, 0 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
