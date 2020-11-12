@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Plateformes/Plateforme.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Magma.tscn" type="PackedScene" id=2]
@@ -8,11 +8,14 @@
 [ext_resource path="res://Scenes/Plateformes/PlateformeCercle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Ressources/decors/château.png" type="Texture" id=8]
+[ext_resource path="res://Ressources/interface/icone_coeur.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -5.65686, 0 )
+script = ExtResource( 10 )
 
 [node name="PlateformeDepart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 81.4622, 317.987 )
@@ -46,7 +49,7 @@ position = Vector2( 2376.69, 183.576 )
 position = Vector2( 2688.5, 302.355 )
 
 [node name="PlateformeFin" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2977.64, 220.334 )
+position = Vector2( 2981.21, 294.064 )
 scale = Vector2( 1.5, 1 )
 
 [node name="RangeeMagma1" type="Node" parent="."]
@@ -174,122 +177,610 @@ z_index = -1
 [node name="RangeeMagma2" type="Node" parent="."]
 
 [node name="Magma" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( -438.474, 598.268 )
+position = Vector2( 1029.71, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma2" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( -181.087, 598.268 )
+position = Vector2( 1287.09, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma3" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 75.4711, 598.268 )
+position = Vector2( 1543.65, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma4" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 332.858, 598.268 )
+position = Vector2( 1801.04, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma5" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 588.405, 598.268 )
+position = Vector2( 2056.58, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma6" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 845.792, 598.268 )
+position = Vector2( 2313.97, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma7" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1102.35, 598.268 )
+position = Vector2( 2570.53, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma8" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1359.74, 598.268 )
+position = Vector2( 2827.92, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma9" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1617.04, 598.094 )
+position = Vector2( 3085.22, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma10" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1874.43, 598.094 )
+position = Vector2( 3342.61, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma11" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 2130.99, 598.094 )
+position = Vector2( 3599.17, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma12" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 2388.37, 598.094 )
+position = Vector2( 3856.55, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma13" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( -438.474, 598.268 )
+position = Vector2( 1029.71, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma14" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( -181.087, 598.268 )
+position = Vector2( 1287.09, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma15" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 75.4711, 598.268 )
+position = Vector2( 1543.65, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma16" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 332.858, 598.268 )
+position = Vector2( 1801.04, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma17" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 588.405, 598.268 )
+position = Vector2( 2056.58, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma18" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 845.792, 598.268 )
+position = Vector2( 2313.97, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma19" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1102.35, 598.268 )
+position = Vector2( 2570.53, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma20" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1359.74, 598.268 )
+position = Vector2( 2827.92, 584.799 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma21" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1617.04, 598.094 )
+position = Vector2( 3085.22, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma22" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 1874.43, 598.094 )
+position = Vector2( 3342.61, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma23" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 2130.99, 598.094 )
+position = Vector2( 3599.17, 584.624 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
 [node name="Magma24" parent="RangeeMagma2" instance=ExtResource( 2 )]
-position = Vector2( 2388.37, 598.094 )
+position = Vector2( 3856.55, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="RangeeMagma3" type="Node" parent="."]
+
+[node name="Magma" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -2014.41, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma2" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1757.02, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma3" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1500.47, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma4" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1243.08, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma5" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -987.532, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma6" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -730.145, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma7" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -473.587, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma8" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -216.2, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma9" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 41.104, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma10" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 298.491, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma11" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 555.049, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma12" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 812.436, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma13" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -2014.41, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma14" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1757.02, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma15" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1500.47, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma16" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -1243.08, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma17" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -987.532, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma18" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -730.145, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma19" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -473.587, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma20" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( -216.2, 584.799 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma21" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 41.104, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma22" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 298.491, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma23" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 555.049, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma24" parent="RangeeMagma3" instance=ExtResource( 2 )]
+position = Vector2( 812.436, 584.624 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="RangeeMagma4" type="Node" parent="."]
+
+[node name="Magma" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1115.01, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma2" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1372.4, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma3" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1628.96, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma4" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1886.35, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma5" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2141.89, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma6" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2399.28, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma7" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2655.84, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma8" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2913.22, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma9" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3170.53, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma10" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3427.92, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma11" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3684.47, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma12" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3941.86, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma13" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1115.01, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma14" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1372.4, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma15" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1628.96, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma16" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 1886.35, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma17" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2141.89, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma18" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2399.28, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma19" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2655.84, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma20" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 2913.22, 481.532 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma21" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3170.53, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma22" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3427.92, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma23" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3684.47, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="Magma24" parent="RangeeMagma4" instance=ExtResource( 2 )]
+position = Vector2( 3941.86, 481.357 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -2
+
+[node name="RangeeMagma5" type="Node" parent="."]
+
+[node name="Magma" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1043.18, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma2" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1300.56, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma3" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1557.12, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma4" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1814.51, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma5" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2070.05, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma6" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2327.44, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma7" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2584, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma8" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2841.39, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma9" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3098.69, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma10" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3356.08, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma11" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3612.64, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma12" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3870.02, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma13" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1043.18, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma14" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1300.56, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma15" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1557.12, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma16" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 1814.51, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma17" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2070.05, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma18" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2327.44, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma19" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2584, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma20" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 2841.39, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma21" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3098.69, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma22" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3356.08, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma23" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3612.64, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma24" parent="RangeeMagma5" instance=ExtResource( 2 )]
+position = Vector2( 3870.02, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="RangeeMagma6" type="Node" parent="."]
+
+[node name="Magma" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -2032.37, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma2" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1774.98, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma3" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1518.43, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma4" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1261.04, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma5" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1005.49, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma6" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -748.105, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma7" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -491.546, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma8" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -234.16, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma9" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 23.1443, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma10" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 280.532, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma11" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 537.091, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma12" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 794.477, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma13" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -2032.37, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma14" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1774.98, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma15" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1518.43, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma16" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1261.04, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma17" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -1005.49, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma18" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -748.105, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma19" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -491.546, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma20" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( -234.16, 697.045 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma21" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 23.1443, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma22" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 280.532, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma23" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 537.091, 696.87 )
+scale = Vector2( 8.02931, 8.02931 )
+z_index = -1
+
+[node name="Magma24" parent="RangeeMagma6" instance=ExtResource( 2 )]
+position = Vector2( 794.477, 696.87 )
 scale = Vector2( 8.02931, 8.02931 )
 z_index = -1
 
@@ -297,9 +788,9 @@ z_index = -1
 position = Vector2( 105.833, 272.976 )
 scale = Vector2( 5, 5 )
 
-[node name="Area2D" type="StaticBody2D" parent="."]
+[node name="Château" type="StaticBody2D" parent="."]
 
-[node name="château_debut" type="Sprite" parent="Area2D"]
+[node name="château_debut" type="Sprite" parent="Château"]
 position = Vector2( -932.342, -199.068 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 8 )
@@ -307,7 +798,83 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Château"]
 position = Vector2( -15.119, 224.266 )
 scale = Vector2( 4.32289, 14.7181 )
 shape = SubResource( 1 )
+
+[node name="Château2" type="StaticBody2D" parent="."]
+position = Vector2( 4925.12, -60.1309 )
+
+[node name="château_debut" type="Sprite" parent="Château2"]
+position = Vector2( -932.342, -199.068 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Château2"]
+position = Vector2( -1850.01, 322.429 )
+scale = Vector2( 4.32289, 14.7181 )
+shape = SubResource( 1 )
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Vie1" type="Sprite" parent="Interface"]
+position = Vector2( 995.119, 28.2082 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 9 )
+
+[node name="Vie2" type="Sprite" parent="Interface"]
+position = Vector2( 950.711, 28.5265 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 9 )
+
+[node name="Vie3" type="Sprite" parent="Interface"]
+position = Vector2( 908.666, 28.2082 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 9 )
+
+[node name="CouleurMort" type="ColorRect" parent="Interface"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.4302, 14.9187 )
+color = Color( 1, 0.0117647, 0.0117647, 0.568627 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CouleurSucces" type="ColorRect" parent="Interface"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.4302, 14.9187 )
+color = Color( 0.0666667, 1, 0.0117647, 0.568627 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="Interface"]
+visible = false
+margin_left = 297.677
+margin_top = 116.044
+margin_right = 395.677
+margin_bottom = 130.044
+rect_scale = Vector2( 4.56785, 4.56785 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoutonRecommencer" type="Button" parent="Interface"]
+visible = false
+margin_left = 399.655
+margin_top = 272.45
+margin_right = 609.655
+margin_bottom = 312.45
+text = "Recommencer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Interface/BoutonRecommencer" to="." method="_on_BoutonRecommencer_pressed"]
